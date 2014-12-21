@@ -1,0 +1,24 @@
+package Test;
+
+import java.io.File;
+import java.util.*;
+
+public class MClass {
+
+	public static void main(String[] args) {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Enter name of dir");
+			String dirName = scanner.next();
+			scanner.close();
+			File dir = new File(dirName);
+			if (!dir.isDirectory()) {
+				System.out.println("Wrong name of folder");
+				return;
+			}
+			
+			
+			String [] list = dir.list();
+			for (String name : list)
+				System.out.println(name);
+	}
+}
